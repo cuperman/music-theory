@@ -8,6 +8,14 @@ function reduceSteps(mode: Mode, step: Step, index: number) {
 }
 
 export function ionianMode(root: Note): Mode {
-  const steps = [Step.WHOLE, Step.WHOLE, Step.HALF, Step.WHOLE, Step.WHOLE, Step.WHOLE, Step.HALF];
+  const steps = [
+    Step.WHOLE,
+    Step.WHOLE,
+    Step.HALF,
+    Step.WHOLE,
+    Step.WHOLE,
+    Step.WHOLE,
+    Step.HALF
+  ];
   return steps.reduce(reduceSteps, [root]).slice(0, steps.length);
 }

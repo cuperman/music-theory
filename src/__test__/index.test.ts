@@ -1,4 +1,12 @@
-import { Note, Step, majorChord, minorChord, ionianMode, normalize, chordInMode } from '../index';
+import {
+  Note,
+  Step,
+  majorChord,
+  minorChord,
+  ionianMode,
+  normalize,
+  chordInMode
+} from '../index';
 
 describe('notes', () => {
   describe('Note', () => {
@@ -37,7 +45,11 @@ describe('chords', () => {
     });
 
     test('A Minor', () => {
-      expect(minorChord(Note.A)).toEqual([Note.A, Note.C + Step.OCTAVE, Note.E + Step.OCTAVE]);
+      expect(minorChord(Note.A)).toEqual([
+        Note.A,
+        Note.C + Step.OCTAVE,
+        Note.E + Step.OCTAVE
+      ]);
     });
   });
 });
@@ -45,7 +57,15 @@ describe('chords', () => {
 describe('modes', () => {
   describe('ionianMode', () => {
     it('is a major scale', () => {
-      expect(ionianMode(Note.C)).toEqual([Note.C, Note.D, Note.E, Note.F, Note.G, Note.A, Note.B]);
+      expect(ionianMode(Note.C)).toEqual([
+        Note.C,
+        Note.D,
+        Note.E,
+        Note.F,
+        Note.G,
+        Note.A,
+        Note.B
+      ]);
     });
   });
 });
