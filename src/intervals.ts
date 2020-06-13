@@ -1,17 +1,17 @@
 import { Note } from './notes';
 
 export function perfect1st(root: Note): Note {
-    return root;
+  return root;
 }
 
 export function minor3rd(root: Note): Note {
-    return root + 3;
+  return root + 3;
 }
 
 export function major3rd(root: Note): Note {
-    return root + 4;
+  return root + 4;
 }
 
 export function perfect5th(root: Note): Note {
-    return root + 7;
+  return root + 7;
 }

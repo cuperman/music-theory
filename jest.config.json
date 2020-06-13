@@ -1,5 +1,5 @@
 {
-    "preset": "ts-jest",
-    "testEnvironment": "node",
-    "reporters": ["default"]
+  "preset": "ts-jest",
+  "testEnvironment": "node",
+  "reporters": ["default"]
 }
