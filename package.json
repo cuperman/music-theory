@@ -1,8 +1,7 @@
 {
-  "name": "music",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "name": "music-theory",
+  "version": "0.1.0",
+  "license": "ISC",
   "scripts": {
     "start": "nodemon",
     "test": "jest --detectOpenHandles --colors"
