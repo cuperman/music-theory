@@ -1,7 +1,8 @@
 // reference: https://en.wikipedia.org/wiki/Mode_(music)
 
-import { Note } from './notes';
+import { Note, normalizeNote, normalizeNotes } from './notes';
 import { Step } from './steps';
+import { Chord } from './chords';
 
 export type Mode = Note[];
 
@@ -98,4 +99,13 @@ export function locrianMode(root: Note): Mode {
     Step.WHOLE,
     Step.WHOLE
   ]);
+}
+
+export function noteInMode(note: Note, mode: Mode) {
+  return normalizeNotes(mode).includes(normalizeNote(note));
+}
+
+export function chordInMode(chord: Chord, mode: Mode) {
+  const notesInMode = chord.map((note) => noteInMode(note, mode));
+  return !notesInMode.includes(false);
 }

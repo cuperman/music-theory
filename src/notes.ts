@@ -1,3 +1,5 @@
+const NUM_NOTES = 12;
+
 export enum Note {
   C = 0,
   C_SHARP = 1,
@@ -16,4 +18,19 @@ export enum Note {
   A_SHARP = 10,
   B_FLAT = 10,
   B = 11
+}
+
+export function normalizeNote(note: Note): Note {
+  const normal = note % NUM_NOTES;
+  if (normal === -0) {
+    return 0;
+  } else if (normal < 0) {
+    return normal + NUM_NOTES;
+  } else {
+    return normal;
+  }
+}
+
+export function normalizeNotes(notes: Note[]): Note[] {
+  return notes.map(normalizeNote);
 }
