@@ -1,7 +1,6 @@
 import { Note } from './src/index';
 import * as chords from './src/chords';
 import * as modes from './src/modes';
-import { chordInMode } from './src/utils';
 
 const notes = {
   A: Note.A,
@@ -45,14 +44,14 @@ console.log('all chords', allChords);
 
 const eMajorScale = modes.ionianMode(Note.E);
 const allChordsInEMajor = Object.entries(allChords).filter(([_name, chord]) => {
-  return chordInMode(chord, eMajorScale);
+  return modes.chordInMode(chord, eMajorScale);
 });
 
 console.log('all chords in E Major', allChordsInEMajor);
 
 const cMajorScale = modes.ionianMode(Note.C);
 const allChordsInCMajor = Object.entries(allChords).filter(([_name, chord]) => {
-  return chordInMode(chord, cMajorScale);
+  return modes.chordInMode(chord, cMajorScale);
 });
 
 console.log('all chords in C Major', allChordsInCMajor);
