@@ -4,71 +4,10 @@ import {
   majorChord,
   minorChord,
   ionianMode,
+  aeolianMode,
   normalize,
   chordInMode
 } from '../index';
-
-describe('notes', () => {
-  describe('Note', () => {
-    test('C is 0', () => {
-      expect(Note.C).toEqual(0);
-    });
-  });
-});
-
-describe('steps', () => {
-  describe('Step', () => {
-    test('HALF', () => {
-      expect(Note.E + Step.HALF).toEqual(Note.F);
-    });
-
-    test('WHOLE', () => {
-      expect(Note.C + Step.WHOLE).toEqual(Note.D);
-    });
-
-    test('OCTAVE', () => {
-      expect(Note.C + Step.OCTAVE).toEqual(12);
-    });
-  });
-});
-
-describe('chords', () => {
-  describe('majorChord', () => {
-    test('C Major', () => {
-      expect(majorChord(Note.C)).toEqual([Note.C, Note.E, Note.G]);
-    });
-  });
-
-  describe('minorChord', () => {
-    test('C Minor', () => {
-      expect(minorChord(Note.C)).toEqual([Note.C, Note.E_FLAT, Note.G]);
-    });
-
-    test('A Minor', () => {
-      expect(minorChord(Note.A)).toEqual([
-        Note.A,
-        Note.C + Step.OCTAVE,
-        Note.E + Step.OCTAVE
-      ]);
-    });
-  });
-});
-
-describe('modes', () => {
-  describe('ionianMode', () => {
-    it('is a major scale', () => {
-      expect(ionianMode(Note.C)).toEqual([
-        Note.C,
-        Note.D,
-        Note.E,
-        Note.F,
-        Note.G,
-        Note.A,
-        Note.B
-      ]);
-    });
-  });
-});
 
 describe('utils', () => {
   describe('normalize', () => {
@@ -89,7 +28,9 @@ describe('utils', () => {
     const cMajorChord = majorChord(Note.C);
     const cMinorChord = minorChord(Note.C);
     const aMinorChord = minorChord(Note.A);
+
     const cMajorScale = ionianMode(Note.C);
+    const aMinorScale = aeolianMode(Note.A);
 
     test('C major chord is in C major scale', () => {
       expect(chordInMode(cMajorChord, cMajorScale)).toBeTruthy();
@@ -101,6 +42,10 @@ describe('utils', () => {
 
     test('A minor chord is in C major scale', () => {
       expect(chordInMode(aMinorChord, cMajorScale)).toBeTruthy();
+    });
+
+    test('C major chord is in A minor scale', () => {
+      expect(chordInMode(cMajorChord, aMinorScale)).toBeTruthy();
     });
   });
 });

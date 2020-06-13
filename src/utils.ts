@@ -17,6 +17,8 @@ export function normalize(notes: Note[]): Note[] {
 }
 
 export function chordInMode(chord: Chord, mode: Mode) {
-  const notesInMode = normalize(chord).map((note) => mode.includes(note));
+  const notesInMode = normalize(chord).map((note) =>
+    normalize(mode).includes(note)
+  );
   return !notesInMode.includes(false);
 }
