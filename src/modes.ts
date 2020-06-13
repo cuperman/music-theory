@@ -1,5 +1,3 @@
-// reference: https://en.wikipedia.org/wiki/Mode_(music)
-
 import { Note, normalizeNote, normalizeNotes } from './notes';
 import { Step } from './steps';
 import { Chord } from './chords';

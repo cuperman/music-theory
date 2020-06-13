@@ -1,5 +1,3 @@
-// reference: https://en.wikipedia.org/wiki/Interval_(music)
-
 import { Note } from './notes';
 
 export type Interval = (root: Note) => Note;

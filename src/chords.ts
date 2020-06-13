@@ -1,5 +1,3 @@
-// reference: https://www.edmprod.com/different-chord-types/
-
 import { Note } from './notes';
 import * as intervals from './intervals';
 
