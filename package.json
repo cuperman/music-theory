@@ -1,11 +1,17 @@
 {
   "name": "@cuperman/music-theory",
+  "version": "0.1.0",
+  "license": "ISC",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
-  "version": "0.1.0",
-  "license": "ISC",
+  "main": "build/index.js",
+  "files": [
+    "build/**/*"
+  ],
   "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf ./build",
     "start": "nodemon",
     "test": "jest --detectOpenHandles --colors"
   },
