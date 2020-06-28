@@ -4,18 +4,18 @@
 
 There are 12 different notes
 
-* A
-* A#/Bb
-* B
-* C
-* C#/Db
-* D
-* D#/Eb
-* E
-* F
-* F#/Gb
-* G
-* G#/Ab
+- A
+- A#/Bb
+- B
+- C
+- C#/Db
+- D
+- D#/Eb
+- E
+- F
+- F#/Gb
+- G
+- G#/Ab
 
 ### Using notes
 
@@ -31,9 +31,9 @@ const bFlat = Note.B_FLAT;
 
 Types of steps
 
-* Half steps: +1 note (semitone)
-* Whole steps: 2 half steps
-* Octaves: 12 half steps
+- Half steps: +1 note (semitone)
+- Whole steps: 2 half steps
+- Octaves: 12 half steps
 
 ### Using steps
 
@@ -49,22 +49,23 @@ const a1 = a + Step.OCTAVE;
 
 ## Intervals
 
-* Perfect 1st (+0 semitones)
-* Major 2nd (+2 semitones)
-* Minor 3rd (+3 semitones)
-* Major 3rd (+4 semitones)
-* Major 4th (+5 semitones)
-* Diminished 5th (+6 semitones)
-* Perfect 5th (+7 semitones)
-* Augmented 5th (+8 semitones)
-* Minor 7th (+10 semitones)
-* Major 7th (+11 semitones)
-* Major 9th (+14 semitones)
-* Perfect 11th (+17 semitones)
+- Perfect 1st (+0 semitones)
+- Major 2nd (+2 semitones)
+- Minor 3rd (+3 semitones)
+- Major 3rd (+4 semitones)
+- Major 4th (+5 semitones)
+- Diminished 5th (+6 semitones)
+- Perfect 5th (+7 semitones)
+- Augmented 5th (+8 semitones)
+- Diminished 7th (+9 semitones)
+- Minor 7th (+10 semitones)
+- Major 7th (+11 semitones)
+- Major 9th (+14 semitones)
+- Perfect 11th (+17 semitones)
 
 There are more, but this is all I needed to build the chords.
 
-Reference: [https://en.wikipedia.org/wiki/Interval_(music)](https://en.wikipedia.org/wiki/Interval_(music))
+Reference: [https://en.wikipedia.org/wiki/Interval\_(music)](<https://en.wikipedia.org/wiki/Interval_(music)>)
 
 ### Using intervals
 
@@ -73,25 +74,24 @@ import { Note, perfect5th } from 'music-theory';
 
 const rootNote = Note.C;
 
-const fifths = [
-    rootNote,
-    perfect5th(rootNote)
-];
+const fifths = [rootNote, perfect5th(rootNote)];
 ```
 
 ## Chords
 
-* Major
-* Minor
-* Diminished
-* Major 7th
-* Minor 7th
-* Dominant 7th
-* Suspended 2
-* Suspended 4
-* Augmented
-* Dominant 9th
-* Major 11th
+- Major
+- Minor
+- Diminished
+- Major 7th
+- Minor 7th
+- Dominant 7th
+- Suspended 2
+- Suspended 4
+- Augmented
+- Dominant 9th
+- Major 11th
+- Diminished 7th
+- Half-diminished 7th
 
 There are more chords, but I started with the ones described here: [https://www.edmprod.com/different-chord-types/](https://www.edmprod.com/different-chord-types/)
 
@@ -114,17 +114,25 @@ const aMinor = minorChord(Note.A);
 6. Aeolian (Natural Minor)
 7. Locrian
 
-Reference: [https://en.wikipedia.org/wiki/Mode_(music)](https://en.wikipedia.org/wiki/Mode_(music))
+Reference: [https://en.wikipedia.org/wiki/Mode\_(music)](<https://en.wikipedia.org/wiki/Mode_(music)>)
 
 ### Using modes
 
 ```ts
-import { Note, ionianMode, aeolianMode, majorChord, chordInMode } from 'music-theory';
+import {
+  Note,
+  ionianMode,
+  aeolianMode,
+  majorChord,
+  chordInMode
+} from 'music-theory';
 
 const cMajorScale = ionianMode(Note.C);
 const aMinorScale = aeolianMode(Note.A);
 
 // All Major chords in the C Major scale
-const majorChords = cMajorScale.map(note => majorChord(note));
-const majorChordsInCMajor = majorChords.filter(chord => chordInMode(chord, cMajorScale));
+const majorChords = cMajorScale.map((note) => majorChord(note));
+const majorChordsInCMajor = majorChords.filter((chord) =>
+  chordInMode(chord, cMajorScale)
+);
 ```
