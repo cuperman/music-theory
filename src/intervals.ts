@@ -34,6 +34,10 @@ export function augmented5th(root: Note): Note {
   return root + 8;
 }
 
+export function diminished7th(root: Note): Note {
+  return root + 9;
+}
+
 export function minor7th(root: Note): Note {
   return root + 10;
 }

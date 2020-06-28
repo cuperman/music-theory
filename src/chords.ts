@@ -102,3 +102,21 @@ export function major11thChord(root: Note): Chord {
     intervals.perfect11th
   ]);
 }
+
+export function diminished7thChord(root: Note): Chord {
+  return makeChord(root, [
+    intervals.perfect1st,
+    intervals.minor3rd,
+    intervals.diminished5th,
+    intervals.diminished7th
+  ]);
+}
+
+export function halfDiminished7thChord(root: Note): Chord {
+  return makeChord(root, [
+    intervals.perfect1st,
+    intervals.minor3rd,
+    intervals.diminished5th,
+    intervals.minor7th
+  ]);
+}
